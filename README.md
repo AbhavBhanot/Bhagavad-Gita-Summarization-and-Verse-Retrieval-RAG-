@@ -65,12 +65,6 @@ The system is evaluated based on weighted criteria:
 - User Experience (5%)
 - Error Handling (5%)
 
-## Installation
-
-```bash
-pip install transformers scikit-learn pandas numpy torch
-```
-
 ## Usage
 
 ```python
