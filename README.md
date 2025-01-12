@@ -127,7 +127,3 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 - Original texts: Bhagavad Gita and Patanjali Yoga Sutras
 - Hugging Face for the T5 model
 - Kaggle for hosting the datasets
-
-## Contact
-
-For questions and feedback, please open an issue in the repository.
