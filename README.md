@@ -97,6 +97,21 @@ The system returns results in JSON format:
 }
 ```
 
+### Evaluation Metrics Performance
+- Total Weighted Score: 4.4/5.0
+- Key Highlights:
+ - Accuracy of Retrieved Verse: 4.0
+ - Contextual Relevance: 4.0
+ - Quality of Prompt/Summary: 4.5
+ - Cost Efficiency: 4.8
+
+### Cost Metrics Results
+- Query Cost: $0.00
+- Resource Utilization:
+ - Model Loading: One-time overhead
+ - Vector Operations: Minimal compute
+ - Storage: Local embeddings only
+
 ## Current Limitations
 
 1. Summary generation needs improvement for more contextual responses
