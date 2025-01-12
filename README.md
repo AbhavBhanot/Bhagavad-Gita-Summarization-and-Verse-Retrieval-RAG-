@@ -86,7 +86,7 @@ The system returns results in JSON format:
     "query": "user_query",
     "retrieved_shlokas": [
         {
-            "Chapter": number,
+            "Chapter": "number",
             "Text": "verse_text",
             "Sanskrit": "sanskrit_text",
             "Translation": "english_translation",
