@@ -53,6 +53,9 @@ The system follows a multi-stage pipeline architecture:
   - numpy (numerical operations)
   - torch (deep learning)
 
+ ## Pipeline Flowchat
+<img width="1440" alt="Screenshot 2025-01-20 at 12 03 28 PM" src="https://github.com/user-attachments/assets/0550efc7-5417-44b6-823e-a8309afab9ca" />
+
 ## Performance Metrics
 
 The system is evaluated based on weighted criteria:
