@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  .spiritual-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .saffron-gradient {
+    background: linear-gradient(135deg, #f2911a 0%, #e37510 100%);
+  }
+  
+  .verse-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+  
+  .sanskrit-text {
+    font-family: 'Noto Sans Devanagari', serif;
+    @apply text-spiritual-800 text-lg leading-relaxed;
+  }
+  
+  .elegant-heading {
+    font-family: 'Playfair Display', serif;
+    @apply font-semibold;
+  }
+  
+  .search-input {
+    @apply w-full px-4 py-3 text-lg border-2 border-spiritual-200 rounded-xl focus:border-spiritual-500 focus:outline-none focus:ring-4 focus:ring-spiritual-100 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-spiritual-500 to-spiritual-600 hover:from-spiritual-600 hover:to-spiritual-700 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/90 hover:bg-white text-spiritual-700 font-medium px-4 py-2 rounded-lg border border-spiritual-200 hover:border-spiritual-300 transition-all duration-300;
+  }
+}
+
