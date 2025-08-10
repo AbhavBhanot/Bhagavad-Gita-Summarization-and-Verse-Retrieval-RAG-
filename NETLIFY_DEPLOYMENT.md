@@ -50,8 +50,8 @@ railway up
 #### Option B: Render
 - Create a new Web Service on Render
 - Connect your GitHub repository
-- Set build command: `pip install -r requirements.txt`
-- Set start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+- Set build command: `pip install -r requirements-stable.txt`
+- Set start command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
 
 #### Option C: Heroku
 ```bash
