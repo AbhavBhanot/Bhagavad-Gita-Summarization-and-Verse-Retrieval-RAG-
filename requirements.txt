@@ -3,7 +3,18 @@ fastapi==0.115.6
 uvicorn[standard]==0.32.1
 pydantic==2.10.4
 gunicorn==21.2.0
-starlette==0.37.2
+starlette==0.41.3  # within FastAPI's compatible range
+pydantic-core  # will align with pydantic
+click>=8.1.7
+h11>=0.14.0
+httptools>=0.6.3
+pyyaml>=5.1
+uvloop>=0.15.1  # if using
+watchfiles>=0.13
+websockets>=10.4
+email-validator>=1.0  # optional
+httpx>=0.23.0  # optional
+
 
 # ML/AI dependencies
 transformers==4.44.2
