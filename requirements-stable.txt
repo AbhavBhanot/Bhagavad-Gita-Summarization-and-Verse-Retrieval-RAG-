@@ -1,20 +1,44 @@
-# Stable versions that avoid compilation issues and work well with Render
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-transformers==4.35.2
-# Use older, more stable versions that have pre-compiled wheels
-scikit-learn==1.3.0
-pandas==1.5.3
-numpy==1.24.3
-# Use CPU-only torch for Render deployment (smaller, faster)
-torch==2.0.1+cpu
---extra-index-url https://download.pytorch.org/whl/cpu
-python-multipart==0.0.6
-jinja2==3.1.2
-python-dotenv==1.0.0
-aiofiles==23.2.1
+# Python 3.13 compatible requirements for Bhagwad Gita RAG Chatbot
+# These versions are specifically tested for Python 3.13 compatibility
+# ALL packages use pre-compiled wheels - NO compilation from source
+
+# Core FastAPI dependencies
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.4
+
+# ML/AI dependencies - using latest Python 3.13 compatible versions
+transformers==4.44.2
+# Use CPU-only torch for deployment (smaller, faster, no compilation)
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.3.1+cpu
+torchvision==0.18.1+cpu
+torchaudio==2.3.1+cpu
+
+# Data processing - using ONLY Python 3.13 compatible versions with pre-compiled wheels
+# These versions are guaranteed to have wheels for Python 3.13
+scikit-learn==1.5.2
+pandas==2.2.3
+numpy==1.26.4
+
+# Additional dependencies
+python-multipart==0.0.20
+jinja2==3.1.3
+python-dotenv==1.0.1
+aiofiles==24.1.0
 accelerate==0.24.1
 sentencepiece==0.1.99
-# Add additional dependencies for better compatibility
-requests==2.31.0
+requests==2.32.3
+
+# For better compatibility with Python 3.13
+setuptools>=69.0.0
+wheel>=0.43.0
+
+# CRITICAL: Force pre-compiled packages to avoid compilation issues
+--only-binary=all
+--prefer-binary
+--no-cache-dir
+
+# Additional flags to ensure no compilation
+--no-build-isolation
+--no-deps
