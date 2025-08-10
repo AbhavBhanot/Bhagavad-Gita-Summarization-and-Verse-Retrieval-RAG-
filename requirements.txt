@@ -1,6 +1,6 @@
 # === Core FastAPI app ===
 fastapi==0.115.6
-pydantic==2.10.4
+pydantic[email]==2.10.4
 aiohttp==3.9.5
 
 # For FastAPI + Uvicorn runtime
