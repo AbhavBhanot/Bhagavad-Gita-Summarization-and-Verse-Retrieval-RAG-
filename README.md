@@ -158,31 +158,18 @@ print(f"AI Summary: {result['summary']}")
 
 ```
 Bhagwad Gita RAG Chatbot/
-├── backend/                    # FastAPI backend
-│   ├── main.py                # Main application file
-│   ├── models/                # Pydantic models
-│   │   └── schemas.py         # Request/response schemas
-│   └── services/              # Business logic
-│       └── rag_service.py     # RAG implementation
-├── frontend/                   # React frontend
-│   ├── src/
-│   │   ├── App.js             # Main React component
-│   │   ├── index.js           # Entry point
-│   │   └── index.css          # Tailwind styles
-│   ├── public/                # Static assets
-│   └── package.json           # NPM dependencies
-├── dataset/                    # Sacred text data
-│   ├── BWG data/              # Bhagavad Gita files
-│   └── PYS Data/              # Yoga Sutras files
-├── code/                       # Original Jupyter notebook
-├── docker-compose.yml         # Docker orchestration
-├── Dockerfile.backend         # Backend container
-├── Dockerfile.frontend        # Frontend container
-├── requirements.txt           # Python dependencies
-├── start.sh                   # Quick start script
-├── DEPLOYMENT.md              # Deployment guide
-├── API_DOCUMENTATION.md       # API reference
-└── README.md                  # This file
+├── frontend/                 # React frontend
+├── backend/                  # FastAPI backend  
+├── dataset/                  # Data files
+├── README.md                 # Main documentation
+├── API_DOCUMENTATION.md      # API reference
+├── netlify.toml             # Netlify config
+├── render.yaml               # Render config
+├── requirements.txt          # Backend dependencies
+├── build_production.sh       # Build script
+├── .gitignore               # Git ignore
+├── .netlifyignore           # Netlify ignore
+└── MIT License              # License
 ```
 
 ## 🚀 Deployment Options
