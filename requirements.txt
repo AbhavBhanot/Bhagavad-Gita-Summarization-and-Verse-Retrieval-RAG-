@@ -21,6 +21,14 @@ watchfiles==0.21.0
 websockets==12.0
 pyyaml==6.0.1
 
+# Required
+python-dateutil>=2.8.2
+pytz>=2020.1
+tzdata>=2022.1
+
+# Optional (performance)
+numexpr>=2.8.4
+bottleneck>=1.3.6
 
 
 # === ML/AI packages ===
