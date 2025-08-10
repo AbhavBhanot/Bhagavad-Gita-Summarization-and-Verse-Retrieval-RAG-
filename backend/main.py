@@ -28,9 +28,12 @@ app = FastAPI(
 )
 
 # Add CORS middleware
+# Get CORS origins from environment variable or use defaults
+cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:8000,https://spiritual-rag-chatbot.netlify.app").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure this for production
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -44,13 +47,34 @@ async def startup_event():
     """Initialize the RAG service on startup"""
     global rag_service
     try:
-        data_dir = Path(__file__).parent.parent / "dataset"
+        # Use environment variable for data directory or default to relative path
+        data_dir = os.getenv("DATA_DIR", str(Path(__file__).parent.parent / "dataset"))
+        data_dir = Path(data_dir)
+        
+        print(f"Initializing RAG Service with data directory: {data_dir}")
+        
+        if not data_dir.exists():
+            print(f"Warning: Data directory {data_dir} does not exist")
+            # Try alternative paths for production
+            alt_paths = [
+                Path("/app/dataset"),
+                Path("/opt/render/project/src/dataset"),
+                Path("./dataset")
+            ]
+            for alt_path in alt_paths:
+                if alt_path.exists():
+                    data_dir = alt_path
+                    print(f"Using alternative data directory: {data_dir}")
+                    break
+        
         rag_service = RAGService(data_dir)
         await rag_service.initialize()
         print("RAG Service initialized successfully")
     except Exception as e:
         print(f"Error initializing RAG service: {e}")
-        raise
+        # Don't raise in production, just log the error
+        if os.getenv("ENVIRONMENT") != "production":
+            raise
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root():
@@ -181,11 +205,18 @@ if static_path.exists():
     app.mount("/frontend", StaticFiles(directory=static_path, html=True), name="frontend")
 
 if __name__ == "__main__":
+    # Get configuration from environment variables
+    host = os.getenv("API_HOST", "0.0.0.0")
+    port = int(os.getenv("API_PORT", "8000"))
+    
+    print(f"Starting Bhagwad Gita RAG Chatbot API on {host}:{port}")
+    print(f"CORS Origins: {cors_origins}")
+    
     uvicorn.run(
         "main:app", 
-        host="0.0.0.0", 
-        port=8000, 
-        reload=True,
-        log_level="info"
+        host=host, 
+        port=port, 
+        reload=os.getenv("ENVIRONMENT") != "production",
+        log_level=os.getenv("LOG_LEVEL", "info")
     )
 

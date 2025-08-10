@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: bhagwad-gita-backend
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: CORS_ORIGINS
+        value: https://spiritual-rag-chatbot.netlify.app,http://localhost:3000,http://localhost:8000
+      - key: TRANSFORMERS_CACHE
+        value: /opt/render/project/src/.cache
+      - key: PYTHONPATH
+        value: /opt/render/project/src
+      - key: LOG_LEVEL
+        value: INFO
+      - key: MODEL_NAME
+        value: t5-base
+      - key: MAX_LENGTH
+        value: 512
+      - key: SUMMARY_MAX_LENGTH
+        value: 150
+      - key: DEFAULT_TOP_N
+        value: 5
+      - key: MAX_TOP_N
+        value: 20
+      - key: MAX_QUERY_LENGTH
+        value: 500
+      - key: WORKERS
+        value: 1
+      - key: MAX_WORKERS
+        value: 4
+      - key: HEALTH_CHECK_INTERVAL
+        value: 30s
+      - key: HEALTH_CHECK_TIMEOUT
+        value: 30s
+      - key: HEALTH_CHECK_RETRIES
+        value: 3
+      - key: ENVIRONMENT
+        value: production

@@ -1,0 +1,33 @@
+# Render-compatible requirements for Bhagwad Gita RAG Chatbot
+# These versions are tested and work well with Render deployment
+
+# Core FastAPI dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# ML/AI dependencies - using pre-compiled wheels
+transformers==4.35.2
+# Use CPU-only torch for Render (smaller, faster, no compilation)
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.0.1+cpu
+torchvision==0.15.2+cpu
+torchaudio==2.0.2+cpu
+
+# Data processing - using stable versions
+scikit-learn==1.3.2
+pandas==2.0.3
+numpy==1.24.3
+
+# Additional dependencies
+python-multipart==0.0.6
+jinja2==3.1.2
+python-dotenv==1.0.0
+aiofiles==23.2.1
+accelerate==0.24.1
+sentencepiece==0.1.99
+requests==2.31.0
+
+# For better compatibility
+setuptools>=65.5.1
+wheel>=0.38.4
