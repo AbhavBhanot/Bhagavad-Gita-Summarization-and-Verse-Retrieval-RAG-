@@ -42,6 +42,5 @@ sentencepiece==0.1.99
 requests==2.32.3
 
 # === Build & packaging tools ===
-setuptools>=69.0.0
-wheel>=0.43.0
-
+setuptools==69.5.1
+wheel==0.43.0
