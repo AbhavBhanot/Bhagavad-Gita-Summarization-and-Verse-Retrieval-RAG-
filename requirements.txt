@@ -1,59 +1,50 @@
-fastapi==0.111.0
-uvicorn==0.29.0
-gunicorn==21.2.0
+fastapi
+uvicorn
+gunicorn
 
-pydantic==2.5.3
-pydantic_core==2.14.6
-annotated_types==0.6.0
+pydantic
+pydantic_core
+annotated_types
 
-anyio==3.7.1
-sniffio==1.3.0
+anyio
+sniffio
 
-aiohttp==3.9.5
+aiohttp
 
-starlette==0.41.3
-typing_extensions==4.12.1
-click==8.1.7
-h11==0.14.0
-httptools==0.6.1
-uvloop==0.19.0
-watchfiles==0.21.0
-websockets==12.0
-pyyaml==6.0.1
+starlette
+typing_extensions
+click
+h11
+httptools
+uvloop
+watchfiles
+websockets
+pyyaml
 
-# Required
-python-dateutil>=2.8.2
-pytz>=2020.1
-tzdata>=2022.1
-six>=1.5
+python-dateutil
+pytz
+tzdata
+six
 
+numexpr
+bottleneck
 
-# Optional (performance)
-numexpr>=2.8.4
-bottleneck>=1.3.6
+transformers
+torch
+torchvision
+torchaudio
 
+scikit-learn
+pandas
+numpy
 
-# === ML/AI packages ===
-transformers==4.44.2
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==2.3.1+cpu
-torchvision==0.18.1+cpu
-torchaudio==2.3.1+cpu
+python-multipart
+jinja2
+python-dotenv
+aiofiles
+accelerate
+sentencepiece
+requests
 
-# === Data processing ===
-scikit-learn==1.5.2
-pandas==2.2.3
-numpy==1.26.4
-
-# === Additional backend features ===
-python-multipart==0.0.20
-jinja2==3.1.3
-python-dotenv==1.0.1
-aiofiles==24.1.0
-accelerate==0.24.1
-sentencepiece==0.1.99
-requests==2.32.3
-
-# === Build & packaging tools ===
-setuptools==69.5.1
-wheel==0.43.0
+setuptools
+wheel
